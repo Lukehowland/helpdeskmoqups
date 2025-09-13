@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/.pnp
+.pnp.js
 
 # next.js
 /.next/
@@ -9,6 +11,7 @@
 
 # production
 /build
+/dist
 
 # debug
 npm-debug.log*
@@ -16,8 +19,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
-.env*
+# env files (IMPORTANT for VM security)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
 
 # vercel
 .vercel
@@ -25,3 +33,54 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OS generated files (important for VM)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# VM specific files
+*.vmdk
+*.vdi
+*.vhd
+*.vmx
+*.vmxf
+*.vmsd
+*.vmsn
+*.vmss
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.next/cache/
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
