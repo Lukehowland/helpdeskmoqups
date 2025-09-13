@@ -1,0 +1,575 @@
+================================================================================
+                          SISTEMA HELPDESK - DOCUMENTACIÓN COMPLETA
+                                ROLES Y CASOS DE USO
+================================================================================
+
+FECHA: 09 de Septiembre de 2025
+VERSIÓN: 1.0
+TIPO: Plataforma Multi-Tenant para Gestión de Tickets de Soporte
+
+================================================================================
+                                DESCRIPCIÓN GENERAL
+================================================================================
+
+El Sistema Helpdesk es una plataforma completa de gestión de tickets de soporte 
+diseñada para permitir a múltiples empresas gestionar su atención al cliente de 
+manera profesional y eficiente. La plataforma opera bajo un modelo multi-tenant 
+donde cada empresa mantiene sus datos separados y seguros.
+
+CARACTERÍSTICAS PRINCIPALES:
+• Sistema multi-empresa con datos separados
+• 4 tipos de usuarios con permisos diferenciados
+• Gestión completa del ciclo de vida de tickets
+• Interfaz moderna y responsiva
+• Sistema de roles y permisos granular
+• Dashboard personalizado para cada tipo de usuario
+
+================================================================================
+                                  ROLES DEL SISTEMA
+================================================================================
+
+El sistema maneja 4 tipos de usuarios principales:
+
+1. USUARIO FINAL (USER)
+2. AGENTE DE SOPORTE (AGENT) 
+3. ADMINISTRADOR DE EMPRESA (COMPANY)
+4. ADMINISTRADOR DE PLATAFORMA (ADMIN)
+
+================================================================================
+                          1. USUARIO FINAL (USER)
+================================================================================
+
+DESCRIPCIÓN:
+Clientes finales de las empresas que utilizan el sistema para reportar 
+problemas, solicitar soporte y dar seguimiento a sus incidencias.
+
+ACCESO AL SISTEMA:
+• Email: user@gmail.com (para pruebas)
+• URL de acceso: Página principal → Iniciar Sesión
+
+PERMISOS OTORGADOS:
+✓ tickets.view.own - Ver solo sus propios tickets
+✓ tickets.create - Crear nuevos tickets
+✓ tickets.respond.own - Responder a sus propios tickets
+
+FUNCIONALIDADES DISPONIBLES:
+
+A) GESTIÓN DE TICKETS:
+   - Crear nuevos tickets de soporte
+   - Ver historial completo de sus tickets
+   - Responder a tickets existentes
+   - Filtrar tickets por estado (abiertos, en progreso, resueltos)
+   - Adjuntar archivos e imágenes
+   - Categorizar tickets por tipo de problema
+
+B) NAVEGACIÓN PRINCIPAL:
+   - Dashboard personal con resumen de tickets
+   - Sección "Mis Tickets" con filtros
+   - Crear nuevo ticket con botón flotante
+   - Centro de ayuda con artículos y FAQs
+
+C) PÁGINAS ESPECÍFICAS:
+   /tickets - Vista principal de tickets
+   /tickets/create - Formulario de creación de tickets
+   /tickets/my-open - Tickets abiertos del usuario
+   /tickets/[id] - Detalle específico de un ticket
+   /create-ticket - Página dedicada para crear tickets
+   /help-center - Centro de ayuda y documentación
+   /announcements - Anuncios y novedades
+   /profile - Perfil personal del usuario
+   /settings - Configuraciones personales
+
+CASOS DE USO PRINCIPALES:
+
+1. REPORTAR PROBLEMA:
+   • Usuario identifica un problema
+   • Accede al sistema y crea un nuevo ticket
+   • Selecciona categoría y prioridad
+   • Describe el problema detalladamente
+   • Adjunta capturas de pantalla si es necesario
+   • Envía el ticket al equipo de soporte
+
+2. DAR SEGUIMIENTO:
+   • Usuario revisa el estado de sus tickets
+   • Lee respuestas del equipo de soporte
+   • Proporciona información adicional
+   • Confirma resolución del problema
+
+3. BUSCAR AYUDA:
+   • Consulta el centro de ayuda
+   • Lee artículos y FAQs
+   • Busca soluciones autogestionadas
+
+RESTRICCIONES:
+✗ No puede ver tickets de otros usuarios
+✗ No puede asignar tickets
+✗ No puede cerrar tickets (solo el soporte puede hacerlo)
+✗ No tiene acceso a funciones administrativas
+
+================================================================================
+                        2. AGENTE DE SOPORTE (AGENT)
+================================================================================
+
+DESCRIPCIÓN:
+Personal técnico encargado de atender y resolver tickets de soporte. Son los 
+encargados directos de brindar atención al cliente y resolver incidencias.
+
+ACCESO AL SISTEMA:
+• Email: agent@gmail.com (para pruebas)
+• URL de acceso: Sección /agent/
+
+PERMISOS OTORGADOS:
+✓ tickets.view.own - Ver sus tickets asignados
+✓ tickets.view.all - Ver todos los tickets del sistema
+✓ tickets.respond.own - Responder a tickets asignados
+✓ tickets.respond.all - Responder a cualquier ticket
+✓ tickets.assign - Asignar tickets a otros agentes
+✓ tickets.close - Cerrar tickets resueltos
+✓ ai.assistant.access - Acceso al asistente IA
+
+FUNCIONALIDADES DISPONIBLES:
+
+A) DASHBOARD DE AGENTE:
+   - Métricas de rendimiento personal
+   - Tickets asignados pendientes
+   - Tickets sin asignar
+   - Tickets de alta prioridad
+   - Estadísticas de resolución
+   - Tiempo promedio de respuesta
+   - Tasa de satisfacción del cliente
+
+B) GESTIÓN AVANZADA DE TICKETS:
+   - Ver todos los tickets del sistema
+   - Tomar tickets sin asignar
+   - Asignar tickets a otros agentes
+   - Responder a cualquier ticket
+   - Cerrar tickets resueltos
+   - Cambiar prioridad y estado
+   - Agregar notas internas
+   - Escalar tickets a supervisores
+
+C) PÁGINAS ESPECÍFICAS:
+   /agent/dashboard - Dashboard principal del agente
+   /agent/assigned - Tickets asignados específicamente
+   /agent/tickets - Vista de todos los tickets
+   /agent/knowledge - Base de conocimiento para agentes
+   /agent/responses - Plantillas de respuestas rápidas
+   /tickets - Vista general de tickets
+   /profile - Perfil del agente
+   /settings - Configuraciones personales
+
+CASOS DE USO PRINCIPALES:
+
+1. GESTIÓN DIARIA DE TICKETS:
+   • Agente revisa dashboard al iniciar turno
+   • Identifica tickets prioritarios y urgentes
+   • Toma tickets sin asignar de su área
+   • Responde a tickets asignados
+   • Actualiza estado de tickets en progreso
+
+2. RESOLUCIÓN DE INCIDENCIAS:
+   • Analiza el problema reportado
+   • Consulta base de conocimiento
+   • Proporciona solución al usuario
+   • Verifica que la solución funcione
+   • Cierra el ticket una vez resuelto
+
+3. COLABORACIÓN CON EQUIPO:
+   • Asigna tickets complejos a especialistas
+   • Agrega notas internas para contexto
+   • Escala problemas críticos
+   • Comparte soluciones con otros agentes
+
+4. SEGUIMIENTO Y MÉTRICAS:
+   • Monitorea tiempos de respuesta
+   • Mantiene alta satisfacción del cliente
+   • Cumple con SLAs establecidos
+   • Reporta problemas recurrentes
+
+HERRAMIENTAS ESPECIALES:
+• Asistente IA para sugerir soluciones
+• Base de conocimiento interna
+• Plantillas de respuestas rápidas
+• Sistema de escalación automática
+
+================================================================================
+                    3. ADMINISTRADOR DE EMPRESA (COMPANY)
+================================================================================
+
+DESCRIPCIÓN:
+Responsable de la gestión completa de la empresa dentro de la plataforma. 
+Supervisa operaciones, gestiona agentes, configura políticas y analiza 
+métricas de rendimiento.
+
+ACCESO AL SISTEMA:
+• Email: empresa@gmail.com (para pruebas)
+• URL de acceso: Sección /empresa/
+
+PERMISOS OTORGADOS:
+✓ tickets.view.own - Ver tickets de su empresa
+✓ tickets.view.all - Ver todos los tickets de la empresa
+✓ tickets.create - Crear tickets si necesario
+✓ tickets.respond.own - Responder a tickets
+✓ tickets.respond.all - Responder a cualquier ticket de la empresa
+✓ tickets.assign - Asignar tickets
+✓ tickets.close - Cerrar tickets
+✓ users.view - Ver usuarios de la empresa
+✓ users.create - Crear nuevos usuarios
+✓ users.edit - Editar usuarios existentes
+✓ company.view - Ver configuración de empresa
+✓ company.edit - Editar configuración de empresa
+✓ company.agents.add - Agregar nuevos agentes
+✓ company.agents.remove - Remover agentes
+✓ company.announcements.create - Crear anuncios
+✓ company.announcements.edit - Editar anuncios
+✓ system.analytics - Acceso a métricas y reportes
+✓ ai.assistant.access - Acceso al asistente IA
+
+FUNCIONALIDADES DISPONIBLES:
+
+A) DASHBOARD EJECUTIVO:
+   - Métricas generales de la empresa
+   - Total de tickets y tendencias
+   - Tasa de resolución general
+   - Tiempo promedio de respuesta
+   - Agentes activos y su rendimiento
+   - Tickets que requieren atención inmediata
+   - Indicadores de satisfacción del cliente
+
+B) GESTIÓN DE RECURSOS HUMANOS:
+   - Administrar agentes de soporte
+   - Contratar y dar de baja agentes
+   - Asignar roles y permisos
+   - Monitorear rendimiento individual
+   - Configurar horarios y turnos
+
+C) GESTIÓN DE TICKETS AVANZADA:
+   - Supervisión de todos los tickets
+   - Identificar cuellos de botella
+   - Reasignar cargas de trabajo
+   - Intervenir en casos críticos
+   - Aprobar escalaciones
+
+D) CONFIGURACIÓN DE EMPRESA:
+   - Configurar información corporativa
+   - Establecer políticas de SLA
+   - Personalizar categorías de tickets
+   - Configurar niveles de prioridad
+   - Establecer flujos de trabajo
+
+E) COMUNICACIONES:
+   - Crear anuncios para empleados
+   - Comunicar cambios de políticas
+   - Notificar actualizaciones del sistema
+   - Gestionar comunicación interna
+
+F) PÁGINAS ESPECÍFICAS:
+   /empresa/dashboard - Dashboard principal de la empresa
+   /empresa/all-tickets - Todos los tickets de la empresa
+   /empresa/agents - Gestión de agentes
+   /empresa/announcements - Gestión de anuncios
+   /empresa/company - Configuración de empresa
+   /empresa/help-management - Gestión de artículos de ayuda
+   /empresa/performance - Métricas y rendimiento
+   /empresa/posts - Gestión de publicaciones
+   /empresa/responses - Plantillas de respuestas
+
+CASOS DE USO PRINCIPALES:
+
+1. SUPERVISIÓN OPERACIONAL:
+   • Monitorea métricas diarias de soporte
+   • Identifica tendencias y problemas recurrentes
+   • Revisa cumplimiento de SLAs
+   • Analiza satisfacción del cliente
+
+2. GESTIÓN DE EQUIPO:
+   • Evalúa rendimiento de agentes
+   • Redistribuye cargas de trabajo
+   • Capacita nuevos agentes
+   • Establece metas de rendimiento
+
+3. OPTIMIZACIÓN DE PROCESOS:
+   • Identifica oportunidades de mejora
+   • Implementa nuevos procedimientos
+   • Automatiza procesos repetitivos
+   • Reduce tiempos de resolución
+
+4. REPORTING Y ANÁLISIS:
+   • Genera reportes executivos
+   • Presenta métricas a directivos
+   • Identifica necesidades de recursos
+   • Planifica crecimiento del equipo
+
+5. GESTIÓN DE CRISIS:
+   • Coordina respuesta a incidentes críticos
+   • Reasigna recursos según prioridades
+   • Comunica updates a stakeholders
+   • Implementa medidas correctivas
+
+================================================================================
+                    4. ADMINISTRADOR DE PLATAFORMA (ADMIN)
+================================================================================
+
+DESCRIPCIÓN:
+Responsable técnico de toda la plataforma helpdesk. Gestiona múltiples empresas, 
+aprueba nuevas organizaciones y mantiene la operación general del sistema.
+
+ACCESO AL SISTEMA:
+• Email: admin@gmail.com o super@gmail.com (para pruebas)
+• URL de acceso: Sección /admin/
+
+PERMISOS OTORGADOS:
+✓ system.companies.manage - Gestionar empresas en la plataforma
+✓ system.companies.approve - Aprobar nuevas empresas
+✓ system.companies.reject - Rechazar solicitudes de empresas
+✓ system.settings - Configurar ajustes del sistema
+✓ users.view - Ver todos los usuarios
+✓ company.view - Ver información de todas las empresas
+
+FUNCIONALIDADES DISPONIBLES:
+
+A) DASHBOARD DE PLATAFORMA:
+   - Total de empresas registradas
+   - Empresas activas vs inactivas
+   - Solicitudes pendientes de aprobación
+   - Total de usuarios en la plataforma
+   - Salud general del sistema
+   - Crecimiento mensual de la plataforma
+
+B) GESTIÓN DE EMPRESAS:
+   - Revisar solicitudes de nuevas empresas
+   - Aprobar o rechazar aplicaciones
+   - Gestionar empresas existentes
+   - Suspender empresas problemáticas
+   - Configurar límites por empresa
+
+C) ADMINISTRACIÓN DEL SISTEMA:
+   - Configurar parámetros globales
+   - Gestionar actualizaciones
+   - Monitorear rendimiento del sistema
+   - Configurar copias de seguridad
+   - Mantener seguridad general
+
+D) PÁGINAS ESPECÍFICAS:
+   /admin/dashboard - Dashboard principal de administración
+   /admin/companies - Gestión de empresas registradas
+   /admin/company - Configuración específica de empresas
+   /admin/users - Gestión de todos los usuarios
+   /admin/system-settings - Configuraciones del sistema
+   /admin/posts - Gestión de contenido global
+   /admin/help-management - Gestión de ayuda global
+
+CASOS DE USO PRINCIPALES:
+
+1. ONBOARDING DE NUEVAS EMPRESAS:
+   • Revisa solicitudes de registro
+   • Verifica información corporativa
+   • Aprueba empresas legítimas
+   • Rechaza solicitudes fraudulentas
+   • Configura parámetros iniciales
+
+2. MANTENIMIENTO DE PLATAFORMA:
+   • Monitorea salud del sistema
+   • Aplica actualizaciones de seguridad
+   • Optimiza rendimiento general
+   • Gestiona capacidad del servidor
+   • Implementa nuevas características
+
+3. SOPORTE A EMPRESAS:
+   • Resuelve problemas técnicos
+   • Asiste en configuraciones complejas
+   • Proporciona soporte especializado
+   • Escala recursos según demanda
+
+4. GOVERNANCE Y COMPLIANCE:
+   • Asegura cumplimiento de políticas
+   • Implementa medidas de seguridad
+   • Audita uso de la plataforma
+   • Gestiona aspectos legales
+
+RESTRICCIONES:
+✗ No gestiona tickets específicos de soporte
+✗ No tiene acceso directo a datos de clientes
+✗ Se enfoca en aspectos técnicos y administrativos
+✗ No interviene en operaciones diarias de empresas
+
+================================================================================
+                              FLUJO DE TRABAJO GENERAL
+================================================================================
+
+1. CREACIÓN DE TICKET:
+   Usuario → Crea ticket → Sistema asigna ID → Notifica a agentes
+
+2. ASIGNACIÓN:
+   Agente toma ticket → O supervisor asigna → Ticket pasa a "En Progreso"
+
+3. RESOLUCIÓN:
+   Agente investiga → Proporciona solución → Usuario confirma → Ticket cerrado
+
+4. ESCALACIÓN:
+   Si es complejo → Se asigna a especialista → O se escala a supervisor
+
+5. SUPERVISIÓN:
+   Admin de empresa → Monitorea métricas → Optimiza procesos → Reporta
+
+6. ADMINISTRACIÓN:
+   Admin de plataforma → Gestiona sistema → Aprueba empresas → Mantiene
+
+================================================================================
+                                TIPOS DE ACCESO
+================================================================================
+
+ACCESO PÚBLICO:
+• Página principal de marketing
+• Registro de empresas
+• Registro de usuarios
+• Login general
+
+ACCESO AUTENTICADO - USUARIO:
+• Dashboard personal
+• Gestión de tickets propios
+• Centro de ayuda
+• Configuraciones personales
+
+ACCESO AUTENTICADO - AGENTE:
+• Dashboard de agente
+• Gestión de todos los tickets
+• Herramientas de soporte
+• Base de conocimiento
+
+ACCESO AUTENTICADO - EMPRESA:
+• Dashboard ejecutivo
+• Gestión de agentes
+• Configuración de empresa
+• Métricas y reportes
+
+ACCESO AUTENTICADO - ADMIN:
+• Dashboard de plataforma
+• Gestión de empresas
+• Configuraciones del sistema
+• Administración general
+
+================================================================================
+                                PÁGINAS Y RUTAS
+================================================================================
+
+RUTAS PÚBLICAS:
+/ - Página principal
+/login - Inicio de sesión
+/register - Registro de empresa
+/register-user - Registro de usuario
+/coming-soon - Página de próximamente
+
+RUTAS DE USUARIO:
+/tickets - Mis tickets
+/tickets/create - Crear ticket
+/tickets/my-open - Tickets abiertos
+/tickets/[id] - Ver ticket específico
+/create-ticket - Página de creación
+/help-center - Centro de ayuda
+/announcements - Anuncios
+/profile - Perfil
+/settings - Configuraciones
+
+RUTAS DE AGENTE:
+/agent/dashboard - Dashboard de agente
+/agent/assigned - Tickets asignados
+/agent/tickets - Todos los tickets
+/agent/knowledge - Base de conocimiento
+/agent/responses - Plantillas de respuestas
+
+RUTAS DE EMPRESA:
+/empresa/dashboard - Dashboard de empresa
+/empresa/all-tickets - Todos los tickets
+/empresa/agents - Gestión de agentes
+/empresa/announcements - Anuncios internos
+/empresa/company - Configuración
+/empresa/help-management - Gestión de ayuda
+/empresa/performance - Métricas
+/empresa/posts - Publicaciones
+/empresa/responses - Plantillas
+
+RUTAS DE ADMIN:
+/admin/dashboard - Dashboard de plataforma
+/admin/companies - Gestión de empresas
+/admin/users - Gestión de usuarios
+/admin/system-settings - Configuraciones
+/admin/help-management - Gestión de ayuda global
+
+================================================================================
+                              CARACTERÍSTICAS TÉCNICAS
+================================================================================
+
+TECNOLOGÍAS UTILIZADAS:
+• Next.js 15.2.4 (React Framework)
+• TypeScript para type safety
+• Tailwind CSS para estilos
+• Radix UI para componentes
+• Sistema de roles y permisos granular
+• LocalStorage para persistencia de sesión
+• Arquitectura de componentes modulares
+
+SEGURIDAD:
+• Sistema de autenticación basado en roles
+• Permisos granulares por funcionalidad
+• Separación de datos por empresa
+• Validación de acceso en cada ruta
+• Protección contra acceso no autorizado
+
+RENDIMIENTO:
+• Carga bajo demanda de componentes
+• Optimización de imágenes automática
+• Cache eficiente del navegador
+• Diseño responsivo para todos los dispositivos
+
+================================================================================
+                                CREDENCIALES DE PRUEBA
+================================================================================
+
+PARA TESTING DEL SISTEMA:
+
+Usuario Final:
+Email: user@gmail.com
+Contraseña: cualquiera
+Acceso: Funcionalidades básicas de usuario
+
+Agente de Soporte:
+Email: agent@gmail.com  
+Contraseña: cualquiera
+Acceso: Herramientas de soporte y gestión de tickets
+
+Administrador de Empresa:
+Email: empresa@gmail.com
+Contraseña: cualquiera
+Acceso: Gestión completa de empresa y equipo
+
+Administrador de Plataforma:
+Email: admin@gmail.com (o super@gmail.com)
+Contraseña: cualquiera
+Acceso: Administración completa de la plataforma
+
+NOTA: El sistema está configurado para aceptar cualquier contraseña en modo demo.
+
+================================================================================
+                                 CONCLUSIONES
+================================================================================
+
+El Sistema Helpdesk proporciona una solución completa y escalable para la 
+gestión de soporte técnico multi-empresa. Con 4 roles bien diferenciados, 
+cada tipo de usuario tiene acceso exactamente a las funcionalidades que 
+necesita para realizar su trabajo eficientemente.
+
+La arquitectura modular y el sistema de permisos granular garantizan seguridad
+y flexibilidad, mientras que la interfaz moderna proporciona una experiencia
+de usuario excepcional en todos los roles.
+
+El sistema está diseñado para crecer desde pequeñas empresas hasta grandes
+corporaciones, manteniendo siempre la separación de datos y la seguridad
+como prioridades fundamentales.
+
+================================================================================
+                                FIN DEL DOCUMENTO
+================================================================================
+
+Generado automáticamente el 09 de Septiembre de 2025
+Sistema Helpdesk v1.0 - Documentación Completa

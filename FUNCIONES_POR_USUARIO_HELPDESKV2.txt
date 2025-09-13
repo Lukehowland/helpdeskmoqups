@@ -1,0 +1,441 @@
+================================================================================
+                    SISTEMA HELPDESK - FUNCIONES POR USUARIO V2
+                         PANTALLAS Y FUNCIONALIDADES DETALLADAS
+================================================================================
+
+FECHA: 10 de Septiembre de 2025
+VERSIÓN: 2.0
+DESCRIPCIÓN: Documento actualizado con eliminaciones de funciones marcadas,
+refactorización de panel de tickets y cambios según problema identificado.
+
+CAMBIOS PRINCIPALES:
+• Eliminadas funciones marcadas con #
+• Sin asignación de agentes específicos  
+• Sin prioridad en tickets
+• Panel dual para gestión de tickets
+• Diferenciación de acceso entre usuarios y agentes
+
+================================================================================
+                        1. ADMINISTRADOR DE PLATAFORMA (ADMIN)
+================================================================================
+
+CREDENCIALES DE ACCESO:
+• Email: admin@gmail.com o super@gmail.com
+• Contraseña: cualquiera
+• Acceso: /admin/
+
+PANTALLAS DISPONIBLES:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 1. DASHBOARD PRINCIPAL (/admin/dashboard)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver total de empresas registradas
+• Ver empresas activas vs inactivas
+• Ver solicitudes pendientes de aprobación
+• Ver total de usuarios en la plataforma
+• Ver salud general del sistema
+• Aprobar/Rechazar solicitudes de empresas con un clic
+• Ver detalles de cada solicitud pendiente
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 2. GESTIÓN DE EMPRESAS (/admin/companies)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver lista completa de todas las empresas registradas
+• Filtrar empresas por estado (activa, inactiva, pendiente)
+• Buscar empresas por nombre o ID
+• Ver información detallada de cada empresa:
+  - Número de usuarios
+  - Número de tickets procesados
+  - Fecha de registro
+  - Plan contratado
+• Aprobar nuevas empresas
+• Rechazar solicitudes de empresas
+• Suspender empresas problemáticas
+• Reactivar empresas suspendidas
+• Configurar límites por empresa (usuarios, almacenamiento)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 3. GESTIÓN DE USUARIOS (/admin/users)                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver lista de todos los usuarios de todas las empresas
+• Filtrar usuarios por empresa
+• Filtrar usuarios por rol (admin, agente, usuario)
+• Buscar usuarios por nombre o email
+• Ver estadísticas de actividad por usuario
+• Suspender usuarios problemáticos
+• Reactivar usuarios suspendidos
+• Ver historial de actividad por usuario
+• Generar reportes de uso por usuario
+
+================================================================================
+                        2. ADMINISTRADOR DE EMPRESA (COMPANY)
+================================================================================
+
+CREDENCIALES DE ACCESO:
+• Email: empresa@gmail.com
+• Contraseña: cualquiera
+• Acceso: /empresa/
+
+PANTALLAS DISPONIBLES:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 1. DASHBOARD EJECUTIVO (/empresa/dashboard)                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver métricas clave de la empresa:
+  - Total de tickets de usuarios que enviaron a esa empresa
+  - Tickets resueltos enviados a la empresa
+  - Tiempo promedio de respuesta (2.4 horas)
+  - Agentes activos (24 agentes, 8 online)
+• Ver tickets
+• Acceso rápido a acciones principales:
+  - Gestionar agentes
+  - Ver todos los tickets
+  - Configurar empresa
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 2. GESTIÓN DE TODOS LOS TICKETS (/empresa/all-tickets)             │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver todos los tickets de la empresa
+• Filtrar tickets por:
+  - Estado (abierto, en progreso, resuelto, cerrado, abierto sin responder)
+  - Cliente
+  - Fecha de creación
+• Ver historial completo de cada ticket sus respuestas y todo su proceso
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 3. GESTIÓN DE AGENTES (/empresa/agents)                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver lista completa de agentes de la empresa
+• Agregar nuevos agentes al equipo (enviar solicitud de unión)
+• Ver estado de solicitud de agentes invitados a trabajar a empresa
+• Desactivar agentes O ELIMINAR de la empresa
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 4. GESTIÓN DE PUBLICACIONES (/empresa/announcements)               │
+└─────────────────────────────────────────────────────────────────────────────┘
+NOTA: Los usuarios verán estas publicaciones si están suscritos a la empresa.
+Ejemplos de publicaciones:
+- Servidor ha estado registrando problemas de conexión
+- Nuestros servicios se encuentran en mantenimiento desde 000 a 0000
+
+FUNCIONES:
+• Crear, editar, eliminar, ver publicaciones
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 5. CONFIGURACIÓN DE EMPRESA (/empresa/company)                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Configurar información GENERAL corporativa:
+  - Nombre de la empresa
+  - Logo corporativo
+  - Colores de la marca
+  - Información de contacto
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 6. GESTIÓN DE ARTÍCULOS DE AYUDA (/empresa/help-management)        │
+└─────────────────────────────────────────────────────────────────────────────┘
+NOTA: Cada empresa puede crear ayuda personalizada para problemas frecuentes
+que los usuarios suscritos visualizarán.
+
+FUNCIONES:
+• Crear artículos del centro de ayuda
+• Organizar artículos por categorías
+• Publicar FAQs específicas de la empresa
+• Crear tutoriales paso a paso
+• Actualizar documentación existente
+• Gestionar versiones de artículos
+
+PERMISOS ESPECIALES:
+✓ Ver todos los tickets de la empresa
+✓ Gestionar agentes y equipo
+✓ Configurar políticas de la empresa
+✓ Acceder a métricas y reportes avanzados
+✓ Crear contenido para centro de ayuda
+✓ Gestionar comunicación interna
+
+================================================================================
+                        3. AGENTE DE SOPORTE (AGENT)
+================================================================================
+
+CREDENCIALES DE ACCESO:
+• Email: agent@gmail.com
+• Contraseña: cualquiera
+• Acceso: /agent/
+
+PANTALLAS DISPONIBLES:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 1. DASHBOARD DE AGENTE (/agent/dashboard)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver resumen:
+  - Todos los tickets sin respuestas abierto
+  - Tickets resueltos esta semana
+• Ver métricas de rendimiento personal:
+  - Tiempo promedio de respuesta (2.5h)
+  - Tasa de satisfacción o puntuación (94%)
+• Ver tickets recientes que requieren atención
+• Acceso rápido para tomar tickets sin responder
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 2. TICKETS - PANEL DUAL (/agent/tickets)                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+ESTRUCTURA DE INTERFAZ:
+• Panel lateral izquierdo principal: Navegación del sistema
+• Panel lateral izquierdo secundario: Navegación de tickets
+• Área de contenido principal: Vista dinámica que carga:
+  - Lista de tickets
+  - Visualización de un ticket para responder
+  - Cambiar estado
+  - Responder y leer respuestas de usuario
+
+PANEL LATERAL DE TICKETS (Opciones para AGENTES):
+• Todos los tickets
+• Tickets sin responder
+• Tickets recientes
+• Tickets por estado
+• Tickets por categoría
+• Búsqueda avanzada
+• Filtros personalizados
+
+FUNCIONES EN ÁREA PRINCIPAL:
+• Ver todos los tickets del sistema de la empresa con la que está trabajando
+• Responder a tickets abiertos sin responder
+• Tomar tickets ya sea iniciado o sin iniciar sin responder
+• Actualizar estado de tickets
+• Agregar notas internas
+• Cerrar tickets una vez resueltos
+• Ver historial completo de cada ticket
+• Filtrar tickets por múltiples criterios:
+  - Estado
+  - Cliente
+  - Tipo de problema
+
+HERRAMIENTAS ESPECIALES en idea:
+• Asistente de IA para sugerir soluciones
+
+PERMISOS ESPECIALES:
+✓ Ver todos los tickets del sistema
+✓ Tomar tickets sin responder
+✓ Responder a cualquier ticket
+✓ Cerrar tickets resueltos
+✓ Acceso al asistente IA
+
+================================================================================
+                        4. USUARIO FINAL (USER)
+================================================================================
+
+CREDENCIALES DE ACCESO:
+• Email: user@gmail.com
+• Contraseña: cualquiera
+• Acceso: Sistema general
+
+PANTALLAS DISPONIBLES:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 1. TICKETS - PANEL DUAL (/tickets)                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+ESTRUCTURA DE INTERFAZ:
+• Panel lateral izquierdo principal: Navegación del sistema
+• Panel lateral izquierdo secundario: Navegación de mis tickets
+• Área de contenido principal: Vista dinámica que carga:
+  - Lista de tickets propios
+  - Detalle de ticket específico
+  - Formulario de creación
+  - Respuestas y conversación
+
+PANEL LATERAL DE MIS TICKETS (Opciones para USUARIOS - más simples):
+• Crear nuevo ticket
+• Todos mis tickets
+• Tickets abiertos
+• Esperando mi respuesta
+• Tickets resueltos
+• Tickets cerrados
+• Buscar en mis tickets
+
+FUNCIONES EN ÁREA PRINCIPAL:
+• Ver todos mis tickets creados
+• Filtrar mis tickets por estado:
+  - Abiertos
+  - En progreso
+  - Esperando mi respuesta
+  - Resueltos
+  - Cerrados
+• Ver información de cada ticket:
+  - Número de ticket
+  - Título del problema
+  - Estado actual
+  - Última actualización
+• Hacer clic en cualquier ticket para ver detalles completos
+• Acceso al botón flotante "Crear Ticket" en la pantalla de tickets
+
+CREAR NUEVO TICKET (Vista en área principal):
+• Formulario completo para reportar problemas:
+  - Título del problema (obligatorio)
+  - Categoría del problema (desplegable)
+  - Descripción detallada (editor de texto)
+  - Adjuntar archivos e imágenes
+  - Información adicional de contexto
+• Ver consejos para crear tickets efectivos
+• Vista previa antes de enviar
+• Confirmación de ticket creado con número asignado
+
+MIS TICKETS ABIERTOS (Vista en área principal):
+• Vista filtrada solo de tickets abiertos y en progreso
+• Ordenados por fecha
+• Estado en tiempo real de cada ticket
+• Indicador visual de tickets que esperan mi respuesta
+• Acceso rápido para responder o agregar información
+
+DETALLE DE TICKET ESPECÍFICO (Vista en área principal):
+• Ver información completa del ticket:
+  - Título y descripción original
+  - Estado actual y historial de cambios
+  - Categoría
+  - Archivos adjuntos originales
+• Ver conversación completa:
+  - Todas las respuestas del soporte
+  - Mis respuestas anteriores
+  - Timestamps de cada interacción
+• Responder al ticket:
+  - Editor de texto para nueva respuesta
+  - Adjuntar archivos adicionales
+  - Botón para enviar respuesta
+• Confirmar resolución del problema
+• Calificar el servicio recibido (1-5 estrellas)
+• Reaperturar ticket si el problema persiste
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 2. CENTRO DE AYUDA (/help-center)                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+NOTA: Ver publicaciones de ayuda de empresas a las que está suscrito
+
+FUNCIONES:
+• Buscar soluciones antes de crear tickets (publicaciones de empresas suscritas)
+• Buscador inteligente de contenido
+• Calificar utilidad de artículos
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 3. ANUNCIOS Y NOVEDADES (/announcements)                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+NOTA: Visualiza anuncios de empresas suscritas (mantenimiento, problemas, etc.)
+
+FUNCIONES:
+• Ver anuncios con nombre de empresa abajo a la izquierda
+• Ver anuncios ordenados por fecha
+• Ver detalles avanzados de publicación específica al hacer clic
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 4. PERFIL PERSONAL (/profile)                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Ver y editar información personal:
+  - Nombre completo
+  - Email (solo lectura)
+  - Teléfono de contacto
+  - Departamento o área
+  - Información adicional
+• Ver estadísticas de mis tickets:
+  - Total de tickets creados
+  - Tickets resueltos vs pendientes
+• Cambiar foto de perfil
+• Ver historial de actividad
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PANTALLA 5. CONFIGURACIONES PERSONALES (/settings)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+FUNCIONES:
+• Configurar preferencias de la interfaz:
+  - Tema claro/oscuro
+  - Idioma preferido
+
+FUNCIONES ESPECIALES:
+• Botón flotante "Crear Ticket" disponible SOLO EN LA PANTALLA DE TICKETS
+• Búsqueda global en todos mis tickets
+
+PERMISOS ESPECÍFICOS:
+✓ Ver solo mis propios tickets
+✓ Crear nuevos tickets
+✓ Responder a mis tickets
+✓ Acceder al centro de ayuda
+✓ Configurar mi perfil y preferencias
+
+RESTRICCIONES:
+✗ No puede ver tickets de otros usuarios
+✗ No puede cerrar tickets (solo confirmar resolución)
+✗ No tiene acceso a funciones administrativas
+
+================================================================================
+                    ARQUITECTURA DEL PANEL DUAL DE TICKETS
+================================================================================
+
+DISEÑO DE INTERFAZ:
+┌──────────┬──────────┬────────────────────────────────────────┐
+│          │          │                                        │
+│  Panel   │  Panel   │         Área de Contenido             │
+│ Principal│ Tickets  │          Dinámica                     │
+│          │          │                                        │
+│ Sistema  │Navegación│    - Lista de tickets                │
+│ General  │Contextual│    - Detalle de ticket               │
+│          │          │    - Formulario de creación           │
+│          │          │    - Respuestas y conversación        │
+│          │          │                                        │
+└──────────┴──────────┴────────────────────────────────────────┘
+
+COMPORTAMIENTO:
+• El panel de tickets aparece solo cuando se accede a la sección de tickets
+• El contenido del área principal cambia dinámicamente según la selección
+• No hay recarga de página completa, solo del área de contenido
+• El panel de tickets persiste mientras se navega entre diferentes vistas
+
+DIFERENCIAS POR ROL:
+
+AGENTES:
+• Panel más completo con opciones avanzadas
+• Acceso a todos los tickets del sistema
+• Filtros y búsquedas avanzadas
+• Pueden responder cualquier ticket
+
+USUARIOS:
+• Panel simplificado con opciones básicas
+• Solo acceso a sus propios tickets
+• Filtros básicos por estado
+• Solo pueden ver y responder sus tickets
+
+================================================================================
+                                FLUJO GENERAL DEL SISTEMA
+================================================================================
+
+1. USUARIO crea ticket → Sistema asigna ID único → Notifica a AGENTES
+
+2. AGENTE VE ticket nuevo sin responder → lee historial si lo hubiera → Investiga problema
+
+3. AGENTE responde → USUARIO recibe notificación → USUARIO puede responder
+
+4. EMPRESA monitorea métricas → Optimiza procesos
+
+5. ADMIN gestiona plataforma → Aprueba empresas → Mantiene sistema estable
+
+================================================================================
+                                CREDENCIALES DE PRUEBA
+================================================================================
+
+ADMIN PLATAFORMA:      admin@gmail.com (contraseña: cualquiera)
+ADMIN EMPRESA:         empresa@gmail.com (contraseña: cualquiera)
+AGENTE SOPORTE:        agent@gmail.com (contraseña: cualquiera)
+USUARIO FINAL:         user@gmail.com (contraseña: cualquiera)
+
+================================================================================
+                                FIN DEL DOCUMENTO
+================================================================================
+
+Documento de Funciones por Usuario V2 - Sistema Helpdesk
+Actualizado el 10 de Septiembre de 2025
