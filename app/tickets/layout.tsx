@@ -1,5 +1,3 @@
-"use client"
-
 import type React from "react"
 import { AuthenticatedLayout } from "@/components/authenticated-layout"
 
